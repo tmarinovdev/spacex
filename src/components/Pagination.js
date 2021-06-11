@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
+export const Pagination = ({ itemsPerPage, totalItems, paginate, curPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
@@ -9,15 +10,26 @@ export const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
 
   return (
     <nav>
-      <ul className='pagination'>
+      <ul className='pagination cl_after'>
         {pageNumbers.map(number => (
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
+          <li key={number}>
+            <span onClick={() => paginate(number)} className={ curPage == number ? (
+                "active"
+              ) : (
+                ""
+              )}>
               {number}
-            </a>
+            </span>
           </li>
         ))}
       </ul>
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  itemsPerPage: PropTypes.number,
+  totalItems: PropTypes.number,
+  paginate: PropTypes.func,
+  curPage: PropTypes.number
 };
