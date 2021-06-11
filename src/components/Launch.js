@@ -10,12 +10,11 @@ export const Launch = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = 'https://api.spacexdata.com/v3/launches/'+flyNumber;
+  const url = 'https://api.spacexdata.com/v3/launches/' + flyNumber;
 
   const getApiItem = async () => {
     try {
       const response = await axios.get(url);
-      console.log(response.data);
       setData(response.data);
       setLoading(false);
     } catch (e) {
@@ -28,8 +27,8 @@ export const Launch = () => {
     getApiItem();
   }, []);
 
-  if (loading) return "Loading...";
-  if (error) return "Error!";
+  if (loading) return <p className="infoTxt">Loading...</p>;
+  if (error) return <p className="errTxt">Ops an Error!</p>;
 
   return (
     <div className="launchSpot">

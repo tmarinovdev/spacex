@@ -15,7 +15,8 @@ export const Items = ({ items }) => {
         </tr>
       </thead>
       <tbody>
-      {items.map((item, i) => (
+      {items &&
+        items.map((item, i) => (
         <tr key={item.flight_number + i}>
           <td data-label="Mission">{item.mission_name}</td> 
           <td data-label="Date">{dateFormat(item.launch_date_local, "dS mmmm yyyy HH:MM")}</td> 

@@ -9,7 +9,7 @@ export const FetchAxLaunches = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(20);
+  const [itemsPerPage] = useState(15);
 
   const url = 'https://api.spacexdata.com/v3/launches';
 
@@ -34,8 +34,8 @@ export const FetchAxLaunches = () => {
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  if (loading) return "Loading...";
-  if (error) return "Error!";
+  if (loading) return <p className="infoTxt">Loading...</p>;
+  if (error) return <p className="errTxt">Ops an Error!</p>;
   
   return (
     <>
