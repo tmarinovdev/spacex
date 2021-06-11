@@ -1,16 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-// import { SpaceXLaunchesFetch } from './components/FetchLaunches';
 import { FetchAxLaunches } from './components/FetchAxioLaunches';
+import { Launch } from './components/Launch';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>SpaceX launches</h1>
-        <FetchAxLaunches />       
-      </header>
+      <h1>SpaceX launches</h1>
+      <Router>
+        <Switch>
+          <Route exact path="/" ><FetchAxLaunches /></Route>
+          <Route path="/launch"><Launch /></Route>
+          <Redirect to="/404"></Redirect>
+        </Switch>
+      </Router>
     </div>
   );
 }

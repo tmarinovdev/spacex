@@ -1,11 +1,32 @@
-.App {
-  text-align: center;
-}
+.App { text-align: center; width: 800px; margin: 0 auto; padding: 0 0 20px 0; min-height: 600px;}
+.App h1 {margin: 20px 0; color: #fff;}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+table.allLaunches {border: 1px solid #a8a9ad; border-collapse: collapse; table-layout: fixed;}
+table.allLaunches tr {border: 1px solid #a8a9ad;}
+table.allLaunches th {letter-spacing: .1em; line-height: 50px; background: #fff;}
+table.allLaunches td {line-height: 30px; padding: 0 0;}
+table.allLaunches tr:nth-child(even) {background: #FFF;}
+table.allLaunches tr:nth-child(odd) {background: #eaeaea;}
+
+table.allLaunches a.btnDetails {display: inline-flex; align-items: center; justify-content: center; align-self: start; background-color: #015289; color: #fff; font-size: 14px; border-radius: 8px; box-shadow: 0 3px 5px rgb(0 0 0 / 18%); padding: 0 8px; min-width: 80px; min-height: 20px; text-align: center; line-height: 30px; margin: 5px auto; transition: 220ms all ease-in-out;}
+table.allLaunches a.btnDetails:hover, table.allLaunches a.btnDetails:active { background-color: #1871ae; }
+table.allLaunches a.btnDetails:focus {outline-style: solid; outline-color: transparent; box-shadow: 0 0 0 4px #015289; }
+
+.App nav {margin: 10px auto; text-align: center;}
+ul.pagination {display: inline-block; list-style: none;}
+ul.pagination li {display: inline;}
+ul.pagination span {float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; border: 1px solid #a8a9ad; margin: 0 4px; background: #fff;}
+ul.pagination span.active { background-color: #015289; color: white; border: 1px solid #015289; }
+ul.pagination span:hover:not(.active) {background-color: #a8a9ad;}
+
+.launchSpot {padding: 10px 10px; border-radius: 6px; background: #fff;}
+.launchSpot p {padding: 2% 2%; font-style: italic; border: 2px solid #a8a9ad; border-radius: 6px; margin: 10px auto;}
+.launchSpot div {padding: 1% 0;}
+.launchSpot div p {padding: 0 0; border: none; border-radius: 0px; margin: 0 auto; font-style: normal; color: #015289;}
+.launchSpot div p span {font-weight: bold; color: #262626;}
+.goBackFooter a.btnDetails {display: inline-flex; align-items: center; justify-content: center; align-self: start; background-color: #015289; color: #fff; font-size: 14px; border-radius: 8px; box-shadow: 0 3px 5px rgb(0 0 0 / 18%); padding: 0 8px; min-width: 80px; min-height: 20px; text-align: center; line-height: 30px; margin: 5px auto; transition: 220ms all ease-in-out;}
+.goBackFooter a.btnDetails:hover, .goBackFooter a.btnDetails:active { background-color: #1871ae; }
+.goBackFooter a.btnDetails:focus {outline-style: solid; outline-color: transparent; box-shadow: 0 0 0 4px #015289; }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -20,12 +41,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +51,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 1025px) {
+  #header {width:100%}
+  #root {background: #fff;}
+  .App {width: 100%;}
+  .App h1 {color: #262626;}
+  img {max-width: 100%; height: auto;}
+  table.allLaunches {width: 95%; margin: 0 auto;}
+}
+
+@media screen and (max-width: 600px) {    
+  table.allLaunches { border: 0; }
+  table.allLaunches thead { border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+  table.allLaunches tr { border-bottom: 3px solid #a8a9ad; display: block; margin-bottom: .625em; }
+  table.allLaunches td { border-bottom: 1px solid #a8a9ad; display: block; font-size: .8em; text-align: right; padding: 0 1%;}  
+  table.allLaunches td::before {content: attr(data-label); float: left; font-weight: bold; text-transform: uppercase;}
+  table.allLaunches td:last-child { border-bottom: 0; }
 }

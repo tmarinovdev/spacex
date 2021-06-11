@@ -1,19 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import dateFormat from 'dateformat';
+import PropTypes from 'prop-types';
 
-export const Items = ({ items, loading }) => {
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
+export const Items = ({ items }) => {
   return (
-    <div className='list-group mb-4'>
+    <table className='allLaunches'>
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Date</th>
+          <th>Rocket</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
       {items.map((item, i) => (
-        <div key={item.flight_number + i}>
-          <div>Mission: {item.mission_name}</div> 
-          <div>Date: {item.launch_date_local}</div> 
-          <div>Rocket: {item.rocket.rocket_name}</div>
-        </div>
+        <tr key={item.flight_number + i}>
+          <td data-label="Mission">{item.mission_name}</td> 
+          <td data-label="Date">{dateFormat(item.launch_date_local, "dS mmmm yyyy HH:MM")}</td> 
+          <td data-label="Rocket">{item.rocket.rocket_name}</td>
+          <td>
+              <Link className="btnDetails"
+                to={{
+                  pathname: "/Launch",
+                  flyNumber: item.flight_number
+                }} 
+              >View details</Link>
+          </td>
+        </tr>
       ))}
-    </div>
+      </tbody>
+    </table>
   );
+};
+
+Items.propTypes = {
+  items: PropTypes.array
 };

@@ -13,7 +13,7 @@ export const Pagination = ({ itemsPerPage, totalItems, paginate, curPage }) => {
       <ul className='pagination cl_after'>
         {pageNumbers.map(number => (
           <li key={number}>
-            <span onClick={() => paginate(number)} className={ curPage == number ? (
+            <span onClick={() => paginate(number)} className={ curPage === number ? (
                 "active"
               ) : (
                 ""

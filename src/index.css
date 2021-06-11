@@ -5,9 +5,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+      color: #262626;
 }
+code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+* {margin:0; padding:0;}
+a {text-decoration:none; outline:none; color:#015289;}
+a:hover {text-decoration:none; color:#0b84d4;}
+a img {border:0;}
+ul, ol {list-style-position:inside;}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+.cl, div.clear, span.clear{font-size:0; line-height:0; clear:both;}
+.cl_after:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.cl_after{display:inline-block;}
+* html .cl_after{height:1%;}
+.cl_after{display:block;}
+.no-text{text-indent:-9999px; font-size:0; line-height:0;}
+.fl{float:left;}
+.fr{float:right;}
+.db{display:block;}
+.di{display:inline;}
+.dn{display:none;}
+.no-margin{margin:0!important;}
+input, textarea, select{color:#262626; font-family:sans-serif;}
+fieldset{border:none;}
+input.text, input[type='text'], input[type='password'], input[type='file']{border:1px solid #D9D9D9; padding:0 10px; font-size:14px; line-height:32px; height:32px; background:#D9D9D9; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0;}
+input:focus.text, input:focus[type='text'], input:focus[type='password'], input:focus[type='file']{border:1px solid #E5E5E5; background:#E5E5E5;}
+select{border:1px solid #D9D9D9; padding:0 10px; font-size:14px; line-height:32px; height:auto; background:#D9D9D9; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0;}
+select:focus{border:1px solid #E5E5E5; background:#E5E5E5;}
+select option{padding:5px;}
+textarea{border:1px solid #D9D9D9; padding:5px 10px; font-size:14px; line-height:18px; min-height:90px; height:auto; background:#D9D9D9; -webkit-border-radius:0; -moz-border-radius:0; border-radius:0;}
+textarea:focus{border:1px solid #E5E5E5; background:#E5E5E5;}
+input.submit, input[type='submit'], input[type='button']{color:#fff!important; text-transform:capitalize; font-family:sans-serif; font-size:15px!important; background:#266392 !important; height:32px; line-height:28px; border:1px solid #122f45; -webkit-border-radius:20px; -moz-border-radius:20px; border-radius:20px; text-align:center; padding:0 20px; font-weight:normal!important; cursor:pointer; width:auto!important;}
+input.reset, input[type='reset'], a.clear{color:#64bce5!important; text-transform:capitalize; font-family:sans-serif; font-size:15px!important; background:#fff!important; height:30px; line-height:30px; border:1px solid #ccc; -webkit-border-radius:20px; -moz-border-radius:20px; border-radius:20px; text-align:center; padding:0 20px; font-weight:normal!important; cursor:pointer; width:auto!important; display:inline-block;}
+input:hover.reset, input:hover[type='reset'], a:hover.clear{opacity:0.8; filter:alpha(opacity = 80);}
+input:hover.submit, input:hover[type='submit']{background:#122f45 !important; border:1px solid #122f45;}
+input.inputGray, textarea.inputGray{color:#6B6B6B; -ms-overflow-y:auto; overflow-y:auto;}
+table.editbox input.midshade{padding:0 10px!important; background:#D9D9D9!important; border:1px solid #D9D9D9!important; font-size:100%!important;}
+
+input[disabled], textarea[disabled], select[disabled]{border:1px solid #ccc!important; background-color:#ccc!important;}
+input[disabled]:hover, textarea[disabled]:hover, select[disabled]:hover{border:1px solid #ccc!important; background-color:#ccc!important;}
+
+table{width:100%; padding:0; margin:0; border:0 none; border-spacing:0;}
+table td{padding:0 0 5px;}
+
+#header {width: 800px; margin: 10px auto;}
+#root { border-top: 2px solid #a8a9ad; background: url(spaceXBg.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
