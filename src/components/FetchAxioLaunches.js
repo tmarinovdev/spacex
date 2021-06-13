@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Items } from './Items';
 import { Pagination } from './Pagination';
 
+
 export const FetchAxLaunches = () => {
 
   const [data, setData] = useState([]);
@@ -11,8 +12,8 @@ export const FetchAxLaunches = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(15);
 
-  const url = 'https://api.spacexdata.com/v3/launches';
-
+  const url = '/api_to_external';
+  
   const getApiItemsWithAxios = async () => {
     try {
       const response = await axios.get(url);

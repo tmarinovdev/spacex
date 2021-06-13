@@ -10,7 +10,7 @@ export const Launch = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = 'https://api.spacexdata.com/v3/launches/' + flyNumber;
+  const url = '/api_to_external/' + flyNumber;
 
   const getApiItem = async () => {
     try {
